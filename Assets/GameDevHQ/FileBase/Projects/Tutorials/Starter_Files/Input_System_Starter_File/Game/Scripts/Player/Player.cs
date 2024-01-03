@@ -21,6 +21,7 @@ namespace Game.Scripts.Player
         private CinemachineVirtualCamera _followCam;
         [SerializeField]
         private GameObject _model;
+        private Vector3 _moveDirection;
 
 
         private void OnEnable()
@@ -50,8 +51,32 @@ namespace Game.Scripts.Player
 
         private void Update()
         {
-            if (_canMove == true)
-                CalcutateMovement();
+            //if (_canMove == true)
+                //CalcutateMovement();
+
+        }
+
+        public void Movement(Vector2 direction)
+        {
+            _playerGrounded = _controller.isGrounded;
+
+            transform.Rotate(transform.up, direction.x);
+
+            var dir = transform.localScale * direction.y;
+            var velocity = dir * _speed;
+
+            _anim.SetFloat("Speed", Mathf.Abs(velocity.magnitude));
+
+
+            if (_playerGrounded)
+                velocity.y = 0f;
+            if (!_playerGrounded)
+            {
+                velocity.y += -20f * Time.deltaTime;
+            }
+            transform.Translate(new Vector3(0, 0, velocity.x) * Time.deltaTime);
+            
+            //_controller.Move(new Vector3(velocity.x, 0, velocity.y) * Time.deltaTime);
 
         }
 
