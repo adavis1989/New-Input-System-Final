@@ -69,11 +69,11 @@ namespace Game.Scripts.Player
         {
             _playerGrounded = _controller.isGrounded;
             float x = _move.x;
-            float v = _move.y;
+            float y = _move.y;
 
-            transform.Rotate(transform.up, _move.x);
+            transform.Rotate(transform.up, x);
 
-            var direction = transform.forward * _move.y;
+            var direction = transform.forward * y;
             var velocity = direction * _speed;
 
 

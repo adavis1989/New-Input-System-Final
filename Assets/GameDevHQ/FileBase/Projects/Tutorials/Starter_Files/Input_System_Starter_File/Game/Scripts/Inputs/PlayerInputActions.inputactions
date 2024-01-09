@@ -17,7 +17,16 @@
                 {
                     "name": "Interact",
                     "type": "Button",
-                    "id": "42c85b97-10a5-4677-893d-64f505a26c24",
+                    "id": "2402afec-393e-4949-a050-0b9d719ab3ef",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Hold Interaction",
+                    "type": "Button",
+                    "id": "629f0bd3-b60b-408e-9cd4-971df90ba611",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -82,12 +91,23 @@
                 },
                 {
                     "name": "",
-                    "id": "ebee9ab1-e84e-4a4b-906d-1b6b70e9f13d",
+                    "id": "f0b70561-8168-40e8-bd99-a7ba1387f291",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ecab5a91-8b2e-4b3b-9a89-c4d39b654b7f",
+                    "path": "<Keyboard>/e",
+                    "interactions": "Hold(duration=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hold Interaction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

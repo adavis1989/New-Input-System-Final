@@ -18,7 +18,7 @@ public class PlayerManager : MonoBehaviour
     {
         _input = new PlayerInputActions();
         _input.Player.Enable();
-        _input.Player.Interact.started += Interact_started;
+        //_input.Player.Interact.started += Interact_started;
     }
 
     private void Interact_started(UnityEngine.InputSystem.InputAction.CallbackContext obj)

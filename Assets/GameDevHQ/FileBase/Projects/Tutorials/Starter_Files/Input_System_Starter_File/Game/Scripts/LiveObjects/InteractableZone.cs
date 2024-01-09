@@ -44,6 +44,7 @@ namespace Game.Scripts.LiveObjects
         private KeyState _keyState;
         [SerializeField]
         private GameObject _marker;
+        private PlayerInputActions _input;
 
         private bool _inHoldState = false;
 
@@ -69,8 +70,90 @@ namespace Game.Scripts.LiveObjects
         private void OnEnable()
         {
             InteractableZone.onZoneInteractionComplete += SetMarker;
+            _input = new PlayerInputActions();  
+            _input.Player.Enable();
+            _input.Player.Interact.performed += Interact_performed;
+            _input.Player.HoldInteraction.started += HoldInteraction_started;
+            _input.Player.HoldInteraction.canceled += HoldInteraction_canceled;
 
         }
+
+        private void Interact_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            if (_inZone == true)
+            {
+                    //press
+                    switch (_zoneType)
+                    {
+                        case ZoneType.Collectable:
+                            if (_itemsCollected == false)
+                            {
+                                CollectItems();
+                                _itemsCollected = true;
+                                UIManager.Instance.DisplayInteractableZoneMessage(false);
+                            }
+                            break;
+
+                        case ZoneType.Action:
+                            if (_actionPerformed == false)
+                            {
+                                PerformAction();
+                                _actionPerformed = true;
+                                UIManager.Instance.DisplayInteractableZoneMessage(false);
+                            }
+                            break;
+                    }
+                
+                /*//press and hold
+                else if (Input.GetKey(_zoneKeyInput) && _keyState == KeyState.PressHold && _inHoldState == false)
+                {
+                    _inHoldState = true;
+
+
+
+                    switch (_zoneType)
+                    {
+                        case ZoneType.HoldAction:
+                            PerformHoldAction();
+                            break;
+                    }
+                }
+
+                if (Input.GetKeyUp(_zoneKeyInput) && _keyState == KeyState.PressHold)
+                {
+                    _inHoldState = false;
+                    onHoldEnded?.Invoke(_zoneID);
+                }*/
+
+
+            }
+        }
+        private void HoldInteraction_started(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            if (_inZone == true)
+            {
+                //press and hold
+                    _inHoldState = true;
+
+
+
+                    switch (_zoneType)
+                    {
+                        case ZoneType.HoldAction:
+                            PerformHoldAction();
+                            break;
+                    }
+            }
+        }
+        private void HoldInteraction_canceled(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            if (_inZone == true)
+            {
+                _inHoldState = false;
+                onHoldEnded?.Invoke(_zoneID);
+            }
+        }
+
 
         private void OnTriggerEnter(Collider other)
         {
@@ -120,7 +203,7 @@ namespace Game.Scripts.LiveObjects
             }
         }
 
-        private void Update()
+        /*private void Update()
         {
             if (_inZone == true)
             {
@@ -171,7 +254,7 @@ namespace Game.Scripts.LiveObjects
 
                
             }
-        }
+        }*/
        
         private void CollectItems()
         {
