@@ -18,12 +18,18 @@ public class PlayerManager : MonoBehaviour
     {
         _input = new PlayerInputActions();
         _input.Player.Enable();
+        _input.Player.Interact.started += Interact_started;
+    }
+
+    private void Interact_started(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         var move = _input.Player.Movement.ReadValue<Vector2>();
-        _player.Movement(move);
+        //_player.Movement(move);
     }
 }
