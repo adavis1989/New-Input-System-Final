@@ -106,12 +106,14 @@ namespace Game.Scripts.Player
 
         private void ReleasePlayerControl()
         {
+            _input.Player.Disable();
             _canMove = false;
             _followCam.Priority = 9;
         }
 
         private void ReturnPlayerControl()
         {
+            _input.Player.Enable();
             _model.SetActive(true);
             _canMove = true;
             _followCam.Priority = 10;
