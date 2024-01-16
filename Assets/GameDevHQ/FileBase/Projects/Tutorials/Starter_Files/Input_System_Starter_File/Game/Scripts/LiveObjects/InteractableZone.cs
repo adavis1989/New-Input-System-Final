@@ -151,6 +151,7 @@ namespace Game.Scripts.LiveObjects
             {
                 _inHoldState = false;
                 onHoldEnded?.Invoke(_zoneID);
+                //_input.Player.HoldInteraction.Disable();
             }
         }
 

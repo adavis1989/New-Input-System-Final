@@ -382,6 +382,54 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "Crate",
+            "id": "c9c2fd6e-6d1f-4f0e-a661-166af3346b47",
+            "actions": [
+                {
+                    "name": "Single Destroy",
+                    "type": "Button",
+                    "id": "859b0936-d615-48c4-a646-6db660e66ac4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Whole Destroy",
+                    "type": "Button",
+                    "id": "26ea41cd-0762-4004-86cf-c0f591ce30ae",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "36969ef9-dc4a-4327-8da1-037ffce01501",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Single Destroy",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "186457e8-8e06-4cdb-9c0a-1c534171f91d",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Whole Destroy",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

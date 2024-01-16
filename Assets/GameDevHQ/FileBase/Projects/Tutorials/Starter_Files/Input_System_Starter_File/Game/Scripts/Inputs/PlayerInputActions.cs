@@ -404,6 +404,54 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""Crate"",
+            ""id"": ""c9c2fd6e-6d1f-4f0e-a661-166af3346b47"",
+            ""actions"": [
+                {
+                    ""name"": ""Single Destroy"",
+                    ""type"": ""Button"",
+                    ""id"": ""859b0936-d615-48c4-a646-6db660e66ac4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Whole Destroy"",
+                    ""type"": ""Button"",
+                    ""id"": ""26ea41cd-0762-4004-86cf-c0f591ce30ae"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold"",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""36969ef9-dc4a-4327-8da1-037ffce01501"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Single Destroy"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""186457e8-8e06-4cdb-9c0a-1c534171f91d"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Whole Destroy"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -422,6 +470,10 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_ForkLift = asset.FindActionMap("ForkLift", throwIfNotFound: true);
         m_ForkLift_Movement = m_ForkLift.FindAction("Movement", throwIfNotFound: true);
         m_ForkLift_Lift = m_ForkLift.FindAction("Lift", throwIfNotFound: true);
+        // Crate
+        m_Crate = asset.FindActionMap("Crate", throwIfNotFound: true);
+        m_Crate_SingleDestroy = m_Crate.FindAction("Single Destroy", throwIfNotFound: true);
+        m_Crate_WholeDestroy = m_Crate.FindAction("Whole Destroy", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -616,6 +668,47 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         }
     }
     public ForkLiftActions @ForkLift => new ForkLiftActions(this);
+
+    // Crate
+    private readonly InputActionMap m_Crate;
+    private ICrateActions m_CrateActionsCallbackInterface;
+    private readonly InputAction m_Crate_SingleDestroy;
+    private readonly InputAction m_Crate_WholeDestroy;
+    public struct CrateActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public CrateActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @SingleDestroy => m_Wrapper.m_Crate_SingleDestroy;
+        public InputAction @WholeDestroy => m_Wrapper.m_Crate_WholeDestroy;
+        public InputActionMap Get() { return m_Wrapper.m_Crate; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CrateActions set) { return set.Get(); }
+        public void SetCallbacks(ICrateActions instance)
+        {
+            if (m_Wrapper.m_CrateActionsCallbackInterface != null)
+            {
+                @SingleDestroy.started -= m_Wrapper.m_CrateActionsCallbackInterface.OnSingleDestroy;
+                @SingleDestroy.performed -= m_Wrapper.m_CrateActionsCallbackInterface.OnSingleDestroy;
+                @SingleDestroy.canceled -= m_Wrapper.m_CrateActionsCallbackInterface.OnSingleDestroy;
+                @WholeDestroy.started -= m_Wrapper.m_CrateActionsCallbackInterface.OnWholeDestroy;
+                @WholeDestroy.performed -= m_Wrapper.m_CrateActionsCallbackInterface.OnWholeDestroy;
+                @WholeDestroy.canceled -= m_Wrapper.m_CrateActionsCallbackInterface.OnWholeDestroy;
+            }
+            m_Wrapper.m_CrateActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @SingleDestroy.started += instance.OnSingleDestroy;
+                @SingleDestroy.performed += instance.OnSingleDestroy;
+                @SingleDestroy.canceled += instance.OnSingleDestroy;
+                @WholeDestroy.started += instance.OnWholeDestroy;
+                @WholeDestroy.performed += instance.OnWholeDestroy;
+                @WholeDestroy.canceled += instance.OnWholeDestroy;
+            }
+        }
+    }
+    public CrateActions @Crate => new CrateActions(this);
     public interface IPlayerActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -632,5 +725,10 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnLift(InputAction.CallbackContext context);
+    }
+    public interface ICrateActions
+    {
+        void OnSingleDestroy(InputAction.CallbackContext context);
+        void OnWholeDestroy(InputAction.CallbackContext context);
     }
 }
