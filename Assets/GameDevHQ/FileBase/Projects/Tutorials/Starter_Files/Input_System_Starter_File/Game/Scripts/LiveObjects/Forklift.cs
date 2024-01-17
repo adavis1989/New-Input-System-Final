@@ -31,6 +31,13 @@ namespace Game.Scripts.LiveObjects
             InteractableZone.onZoneInteractionComplete += EnterDriveMode;
             _input = new PlayerInputActions();
             _input.ForkLift.Enable();
+            _input.ForkLift.Exit.performed += Exit_performed;
+        }
+
+        private void Exit_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            if (_inDriveMode)
+                ExitDriveMode();
         }
 
         private void EnterDriveMode(InteractableZone zone)
@@ -63,8 +70,8 @@ namespace Game.Scripts.LiveObjects
             {
                 LiftControls();
                 CalcutateMovement();
-                if (Input.GetKeyDown(KeyCode.Escape))
-                    ExitDriveMode();
+                //if (Input.GetKeyDown(KeyCode.Escape))
+                    //ExitDriveMode();
             }
 
         }

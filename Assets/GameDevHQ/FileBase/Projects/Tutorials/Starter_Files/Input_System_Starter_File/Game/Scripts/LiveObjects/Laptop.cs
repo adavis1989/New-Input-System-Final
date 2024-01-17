@@ -19,6 +19,7 @@ namespace Game.Scripts.LiveObjects
         private int _activeCamera = 0;
         [SerializeField]
         private InteractableZone _interactableZone;
+        private PlayerInputActions _input;
 
         public static event Action onHackComplete;
         public static event Action onHackEnded;
@@ -27,11 +28,40 @@ namespace Game.Scripts.LiveObjects
         {
             InteractableZone.onHoldStarted += InteractableZone_onHoldStarted;
             InteractableZone.onHoldEnded += InteractableZone_onHoldEnded;
+            _input = new PlayerInputActions();
+            _input.Player.Enable();
+            _input.Player.Interact.performed += Interact_performed;
+            _input.Player.Exit.performed += Exit_performed;
+        }
+
+        private void Interact_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            if (_hacked == true)
+            {
+
+                var previous = _activeCamera;
+                _activeCamera++;
+
+
+                if (_activeCamera >= _cameras.Length)
+                    _activeCamera = 0;
+
+
+                _cameras[_activeCamera].Priority = 11;
+                _cameras[previous].Priority = 9;
+
+            }
+        }
+        private void Exit_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            _hacked = false;
+            onHackEnded?.Invoke();
+            ResetCameras();
         }
 
         private void Update()
         {
-            if (_hacked == true)
+            /*if (_hacked == true)
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -47,13 +77,13 @@ namespace Game.Scripts.LiveObjects
                     _cameras[previous].Priority = 9;
                 }
 
-                if (Input.GetKeyDown(KeyCode.Escape))
+                /*if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     _hacked = false;
                     onHackEnded?.Invoke();
                     ResetCameras();
                 }
-            }
+            }*/
         }
 
         void ResetCameras()

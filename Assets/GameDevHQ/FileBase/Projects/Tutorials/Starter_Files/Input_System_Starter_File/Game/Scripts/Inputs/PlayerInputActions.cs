@@ -53,6 +53,15 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Exit"",
+                    ""type"": ""Button"",
+                    ""id"": ""d5870e65-e99f-4f14-988b-51aa94c1517f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -113,8 +122,85 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""3159485d-a6f8-4bb9-91c4-312466689915"",
+                    ""path"": ""<Gamepad>/dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""42654dcf-9fd2-4633-9b15-6e38150264eb"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""236eee3e-83c4-4098-a39a-feb3dc0db39d"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""01a2ab61-51e6-483f-b1a3-1e337cade2d1"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""45a94014-27da-463a-b219-1f409a633fa2"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""02054af1-3180-4351-8d41-ffd776474d8e"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
                     ""id"": ""f0b70561-8168-40e8-bd99-a7ba1387f291"",
                     ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fe56c250-ee53-452d-a58f-1a2d1147e863"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -130,6 +216,39 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Hold Interaction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7657e11b-0494-4837-8c75-57aa2659092a"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": ""Hold(duration=1)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Hold Interaction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""07d564f3-2f4c-4760-ad86-25c9bcf1da98"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dbc1b9d0-5998-45a8-94c5-def05aa69aa0"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -165,11 +284,20 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Exit"",
+                    ""type"": ""Button"",
+                    ""id"": ""c13bd814-2e7c-4125-b4b9-c7c1d9f0926d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
-                    ""name"": ""2D Vector"",
+                    ""name"": ""Keyboard"",
                     ""id"": ""7294a8cc-ba53-4f0d-94c3-337cc0191b5b"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
@@ -224,6 +352,61 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""GamePad"",
+                    ""id"": ""1903d8fc-063d-4e31-a0dd-34d969f8565f"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""242f4c60-f3e1-4c5c-8b0f-fe9e42c1945f"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""3dd06068-d444-42fc-a414-79f1f5fd1515"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""78cd4616-b566-4262-8de0-aed6b179d860"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""b6e7d36e-ab4d-4742-b976-55863fd9f8f3"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": ""Up Down"",
                     ""id"": ""4bc2b082-fdda-4bc2-82ec-616045c4c774"",
                     ""path"": ""1DAxis"",
@@ -249,6 +432,39 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""name"": ""positive"",
                     ""id"": ""6a46538f-42f4-4c5f-ba1a-02495f735a50"",
                     ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Elevation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Controller Up Down"",
+                    ""id"": ""933385f6-5b0a-4e89-8e24-0cb183382b5a"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Elevation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""57f66056-1cb4-4b53-8b9f-d0618a397044"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Elevation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""a43f3d61-0335-4f4e-bf36-5bce86f1d406"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -288,6 +504,94 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Rotation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Controller - Shoulder - Left Right"",
+                    ""id"": ""060a757e-ab2e-4301-ac61-01338e260e90"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""8cac4b48-3533-401f-bfa6-5e0842e15b90"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""59c0e863-b47a-4eb3-a8e5-c8afc5f7dd19"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Controller - Right Stick - Left Right"",
+                    ""id"": ""099cc760-7bd0-4835-ba94-7151b00f8ad0"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""5e4a92f1-b5da-4771-8933-0eedfee2ab28"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""73386f94-e6da-4e90-a8c1-691da22b679e"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bf8e25f8-d576-4bf4-8001-c94ddf92ce1f"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""14d09b1b-438b-416e-abe2-428bf6b9f814"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -308,6 +612,15 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""name"": ""Lift"",
                     ""type"": ""Button"",
                     ""id"": ""6bdc6502-f038-4c43-9525-a9912884fd6f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Exit"",
+                    ""type"": ""Button"",
+                    ""id"": ""a7a271ae-17f0-469d-bdf4-19bc6f6e4f08"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -371,6 +684,61 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""Controller"",
+                    ""id"": ""c61b0dec-0ffc-4b37-be49-12cd3ca4b841"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""f5d51d7e-25cb-4b97-89ed-0aa35bed92c6"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""3429b45d-b764-4e14-9036-7c6f823fa9d8"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""728c9c67-19cb-4c60-8845-28075e179b29"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""c29bc0e3-9521-4c0b-89e8-c87b1197a028"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": ""Up Down"",
                     ""id"": ""d33b6c54-7417-4fbf-925e-2522bc5c10d0"",
                     ""path"": ""1DAxis"",
@@ -402,6 +770,61 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Lift"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""4f847d29-c5e9-4592-80e1-4815efa17393"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Lift"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""032c7af7-68c5-4439-a1d4-8da15b0b3948"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Lift"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""f8a317a2-bf2c-43e0-af0b-55dfcb8a19ad"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Lift"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""42b15ab8-5f76-448b-95f1-5ce07d06c7f3"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c9fe85c6-7f52-4135-9394-19e4623adb0e"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -450,6 +873,17 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Whole Destroy"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""11e9ef1c-74b8-42cf-8a65-daccfeadba23"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Whole Destroy"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -461,15 +895,18 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_HoldInteraction = m_Player.FindAction("Hold Interaction", throwIfNotFound: true);
+        m_Player_Exit = m_Player.FindAction("Exit", throwIfNotFound: true);
         // Drone
         m_Drone = asset.FindActionMap("Drone", throwIfNotFound: true);
         m_Drone_Movement = m_Drone.FindAction("Movement", throwIfNotFound: true);
         m_Drone_Elevation = m_Drone.FindAction("Elevation", throwIfNotFound: true);
         m_Drone_Rotation = m_Drone.FindAction("Rotation", throwIfNotFound: true);
+        m_Drone_Exit = m_Drone.FindAction("Exit", throwIfNotFound: true);
         // ForkLift
         m_ForkLift = asset.FindActionMap("ForkLift", throwIfNotFound: true);
         m_ForkLift_Movement = m_ForkLift.FindAction("Movement", throwIfNotFound: true);
         m_ForkLift_Lift = m_ForkLift.FindAction("Lift", throwIfNotFound: true);
+        m_ForkLift_Exit = m_ForkLift.FindAction("Exit", throwIfNotFound: true);
         // Crate
         m_Crate = asset.FindActionMap("Crate", throwIfNotFound: true);
         m_Crate_SingleDestroy = m_Crate.FindAction("Single Destroy", throwIfNotFound: true);
@@ -536,6 +973,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_HoldInteraction;
+    private readonly InputAction m_Player_Exit;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -543,6 +981,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @HoldInteraction => m_Wrapper.m_Player_HoldInteraction;
+        public InputAction @Exit => m_Wrapper.m_Player_Exit;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -561,6 +1000,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @HoldInteraction.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHoldInteraction;
                 @HoldInteraction.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHoldInteraction;
                 @HoldInteraction.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHoldInteraction;
+                @Exit.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnExit;
+                @Exit.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnExit;
+                @Exit.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnExit;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -574,6 +1016,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @HoldInteraction.started += instance.OnHoldInteraction;
                 @HoldInteraction.performed += instance.OnHoldInteraction;
                 @HoldInteraction.canceled += instance.OnHoldInteraction;
+                @Exit.started += instance.OnExit;
+                @Exit.performed += instance.OnExit;
+                @Exit.canceled += instance.OnExit;
             }
         }
     }
@@ -585,6 +1030,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Drone_Movement;
     private readonly InputAction m_Drone_Elevation;
     private readonly InputAction m_Drone_Rotation;
+    private readonly InputAction m_Drone_Exit;
     public struct DroneActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -592,6 +1038,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_Drone_Movement;
         public InputAction @Elevation => m_Wrapper.m_Drone_Elevation;
         public InputAction @Rotation => m_Wrapper.m_Drone_Rotation;
+        public InputAction @Exit => m_Wrapper.m_Drone_Exit;
         public InputActionMap Get() { return m_Wrapper.m_Drone; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -610,6 +1057,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Rotation.started -= m_Wrapper.m_DroneActionsCallbackInterface.OnRotation;
                 @Rotation.performed -= m_Wrapper.m_DroneActionsCallbackInterface.OnRotation;
                 @Rotation.canceled -= m_Wrapper.m_DroneActionsCallbackInterface.OnRotation;
+                @Exit.started -= m_Wrapper.m_DroneActionsCallbackInterface.OnExit;
+                @Exit.performed -= m_Wrapper.m_DroneActionsCallbackInterface.OnExit;
+                @Exit.canceled -= m_Wrapper.m_DroneActionsCallbackInterface.OnExit;
             }
             m_Wrapper.m_DroneActionsCallbackInterface = instance;
             if (instance != null)
@@ -623,6 +1073,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Rotation.started += instance.OnRotation;
                 @Rotation.performed += instance.OnRotation;
                 @Rotation.canceled += instance.OnRotation;
+                @Exit.started += instance.OnExit;
+                @Exit.performed += instance.OnExit;
+                @Exit.canceled += instance.OnExit;
             }
         }
     }
@@ -633,12 +1086,14 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private IForkLiftActions m_ForkLiftActionsCallbackInterface;
     private readonly InputAction m_ForkLift_Movement;
     private readonly InputAction m_ForkLift_Lift;
+    private readonly InputAction m_ForkLift_Exit;
     public struct ForkLiftActions
     {
         private @PlayerInputActions m_Wrapper;
         public ForkLiftActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_ForkLift_Movement;
         public InputAction @Lift => m_Wrapper.m_ForkLift_Lift;
+        public InputAction @Exit => m_Wrapper.m_ForkLift_Exit;
         public InputActionMap Get() { return m_Wrapper.m_ForkLift; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -654,6 +1109,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Lift.started -= m_Wrapper.m_ForkLiftActionsCallbackInterface.OnLift;
                 @Lift.performed -= m_Wrapper.m_ForkLiftActionsCallbackInterface.OnLift;
                 @Lift.canceled -= m_Wrapper.m_ForkLiftActionsCallbackInterface.OnLift;
+                @Exit.started -= m_Wrapper.m_ForkLiftActionsCallbackInterface.OnExit;
+                @Exit.performed -= m_Wrapper.m_ForkLiftActionsCallbackInterface.OnExit;
+                @Exit.canceled -= m_Wrapper.m_ForkLiftActionsCallbackInterface.OnExit;
             }
             m_Wrapper.m_ForkLiftActionsCallbackInterface = instance;
             if (instance != null)
@@ -664,6 +1122,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Lift.started += instance.OnLift;
                 @Lift.performed += instance.OnLift;
                 @Lift.canceled += instance.OnLift;
+                @Exit.started += instance.OnExit;
+                @Exit.performed += instance.OnExit;
+                @Exit.canceled += instance.OnExit;
             }
         }
     }
@@ -714,17 +1175,20 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnHoldInteraction(InputAction.CallbackContext context);
+        void OnExit(InputAction.CallbackContext context);
     }
     public interface IDroneActions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnElevation(InputAction.CallbackContext context);
         void OnRotation(InputAction.CallbackContext context);
+        void OnExit(InputAction.CallbackContext context);
     }
     public interface IForkLiftActions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnLift(InputAction.CallbackContext context);
+        void OnExit(InputAction.CallbackContext context);
     }
     public interface ICrateActions
     {
